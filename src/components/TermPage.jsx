@@ -1,5 +1,5 @@
 import { useState } from "react";
-import CourseList from "./CourseList";
+import CoursePage from "./CoursePage";
 
 const terms = {
   Fall: 'Fall',
@@ -25,14 +25,14 @@ const MenuSelector = ({selection, setSelection}) => (
   </div>
 );
 
-const MenuPage = ({courses}) => {
+const TermPage = ({courses}) => {
   const [selection, setSelection] = useState(() => Object.keys(terms)[0]);
   return (
     <div>
       <MenuSelector selection={selection} setSelection={setSelection} />
-      <CourseList courses={Object.values(courses).filter(course => course.term === selection)}/>
+      <CoursePage courses={Object.values(courses).filter(course => course.term === selection)}/>
     </div>
   );
 }
 
-export default MenuPage;
+export default TermPage;

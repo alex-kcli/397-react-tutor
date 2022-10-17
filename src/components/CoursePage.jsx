@@ -34,7 +34,7 @@ const CoursePage = ({courses}) => {
       <Modal open={open} close={closeModal}>
         <Course selected={selected} />
       </Modal>
-      <CourseList courses={courses} selected={selected} toggleSelected={toggleSelected} conflicted={conflicted}/>
+      <CourseList courses={courses} selected={selected} toggleSelected={toggleSelected} conflicted={conflicted} />
     </div>
   );
 };

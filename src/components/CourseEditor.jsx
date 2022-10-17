@@ -1,4 +1,4 @@
-// import { useDbUpdate } from '../utilities/firebase';
+import { useDbUpdate } from '../utilities/firebase';
 import { useFormData } from '../utilities/useFormData';
 import { useNavigate, useLocation } from 'react-router-dom'
 
@@ -26,17 +26,17 @@ const ButtonBar = ({message, disabled}) => {
   return (
     <div className="d-flex">
       <button type="button" className="btn btn-outline-dark me-2" onClick={() => navigate(-1)}>Cancel</button>
-      <button type="submit" className="btn btn-primary me-auto" disabled={disabled}>Submit</button>
+      <button type="submit" className="btn btn-primary me-auto" disabled={disabled} onClick={() => navigate(-1)}>Submit</button>
       <span className="p-2">{message}</span>
     </div>
   );
 };
 
 const CourseEditor = ({courses}) => {
-//   const [update, result] = useDbUpdate(`/users/${user.id}`);
   const location = useLocation(); 
   const courseKey = location.pathname.substring(1);
   const course = courses[courseKey];
+  const [update, result] = useDbUpdate(`/courses/${courseKey}`);
 
   const [state, change] = useFormData(validateUserData, course);
   const submit = (evt) => {

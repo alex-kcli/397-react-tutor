@@ -17,7 +17,7 @@ const CourseList = ({ courses, selected, toggleSelected, conflicted }) => {
           <h5 className="card-title">{value.term} CS {value.number}</h5> 
           <p className="card-text">{value.title}</p>
           <p className="card-text">{value.meets}</p>
-          {profile?.user && profile?.user && <Link to={`/${value.term[0] + value.number}`} className="bi bi-pen-fill text-danger">Edit</Link>}
+          {profile?.user && profile?.isAdmin && <Link to={`/${value.term[0] + value.number}`} className="bi bi-pen-fill text-danger">Edit</Link>}
           </div>
         </div>) }
   </div>

@@ -4,10 +4,10 @@ import { useNavigate, useLocation } from 'react-router-dom'
 
 const validateUserData = (key, val) => {
   switch (key) {
-    case 'firstName': case 'lastName':
-      return /(^\w\w)/.test(val) ? '' : 'must be least two characters';
-    case 'email':
-      return /^\w+@\w+[.]\w+/.test(val) ? '' : 'must contain name@domain.top-level-domain';
+    case 'title':
+      return /(^\w\w)/.test(val) ? '' : 'Title must be least two characters';
+    case 'meets':
+      return /^$|^[M|Tu|W|Th|F]+ [0-9]{2}:[0-9]{2}\-[0-9]{2}:[0-9]{2}$/.test(val) ? '' : 'Must contain days and start-end, e.g., MWF 10:00-10:50 or empty';
     default: return '';
   }
 };

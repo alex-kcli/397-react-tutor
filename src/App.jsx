@@ -30,11 +30,13 @@ const Main = () => {
 const queryClient = new QueryClient();
 
 const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <div className="container">
-      <Main />
-    </div>
-  </QueryClientProvider>
+  <div>
+    <QueryClientProvider client={queryClient}>
+      <div className="container">
+        <Main />
+      </div>
+    </QueryClientProvider>
+  </div>
 );
 
 export default App;

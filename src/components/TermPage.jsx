@@ -1,5 +1,6 @@
 import { useState } from "react";
 import CoursePage from "./CoursePage";
+import Navigation from "./Navigation"
 
 const terms = {
   Fall: 'Fall',
@@ -30,6 +31,7 @@ const TermPage = ({courses}) => {
   return (
     <div>
       <MenuSelector selection={selection} setSelection={setSelection} />
+      <Navigation />
       <CoursePage courses={Object.values(courses).filter(course => course.term === selection)}/>
     </div>
   );
